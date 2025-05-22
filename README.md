@@ -1,3 +1,5 @@
+# **_THIS IS AI SLOP AND NOT CURRENTLY FUNCTIONAL_**
+
 # Google AIY Birds Classifier for Scrypted
 
 This repository provides a bird species classifier configuration for [Scrypted](https://github.com/koush/scrypted) that uses Google's AIY Birds V1 model.
