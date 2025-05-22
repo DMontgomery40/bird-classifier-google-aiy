@@ -18,6 +18,8 @@ In your Scrypted installation:
 1. Navigate to the detector plugin settings
 2. Enter this repository URL: `https://github.com/DMontgomery40/bird-classifier-google-aiy`
 3. Scrypted will automatically download the model and labels
+4. Alternatively, you can point Scrypted directly to the raw configuration file:
+   `https://raw.githubusercontent.com/DMontgomery40/bird-classifier-google-aiy/main/config.json`
 
 ## Model Details
 
@@ -28,7 +30,7 @@ In your Scrypted installation:
 
 ## Configuration
 
-The `config.json` file contains all necessary settings for Scrypted to use this classifier:
+The `config.json` file in the root of this repository contains all necessary settings for Scrypted to use this classifier:
 
 ```json
 {
@@ -55,6 +57,13 @@ The `config.json` file contains all necessary settings for Scrypted to use this 
 ## Alternative for North American Birds Only
 
 If you specifically need a classifier trained only on North American birds, consider using [npatta01/Bird-Classifier](https://github.com/npatta01/Bird-Classifier) which is trained on 400 North American bird species.
+
+## CoreML for Apple Silicon
+
+To build a CoreML version of this model, run `convert_to_coreml.py`.
+This downloads the TFLite model and outputs `aiy_birds.mlmodel`.
+Use `config_coreml.json` in Scrypted or host the generated model and update the `model.url` field.
+
 
 ## Credits
 
