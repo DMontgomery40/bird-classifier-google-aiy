@@ -1,0 +1,20 @@
+{
+  "name": "Google AIY Birds Classifier (CoreML)",
+  "version": "1.0.0",
+  "model": {
+    "url": "./aiy_birds.mlmodel",
+    "type": "coreml"
+  },
+  "labels": {
+    "url": "https://www.gstatic.com/aihub/tfhub/labelmaps/aiy_birds_V1_labelmap.csv",
+    "type": "csv"
+  },
+  "input": {
+    "width": 224,
+    "height": 224,
+    "channels": 3,
+    "mean": [127.5, 127.5, 127.5],
+    "std": [127.5, 127.5, 127.5]
+  }
+}
+
