@@ -1,0 +1,60 @@
+# Google AIY Birds Classifier for Scrypted
+
+This repository provides a bird species classifier configuration for [Scrypted](https://github.com/koush/scrypted) that uses Google's AIY Birds V1 model.
+
+## Features
+
+- Identifies **964 different bird species**
+- Uses Google's hosted TensorFlow Lite model
+- No download required - Scrypted fetches the model directly from Google's servers
+- Lightweight and efficient for real-time classification
+
+## Usage
+
+In your Scrypted installation:
+
+1. Navigate to the detector plugin settings
+2. Enter this repository URL: `https://github.com/DMontgomery40/bird-classifier-google-aiy`
+3. Scrypted will automatically download the model and labels
+
+## Model Details
+
+- **Model**: Google AIY Vision Classifier Birds V1
+- **Input Size**: 224x224 pixels
+- **Model Type**: TensorFlow Lite (TFLite)
+- **Species Count**: 964 bird species (includes many North American species)
+
+## Configuration
+
+The `config.json` file contains all necessary settings for Scrypted to use this classifier:
+
+```json
+{
+  "name": "Google AIY Birds Classifier",
+  "version": "1.0.0",
+  "model": {
+    "url": "https://storage.googleapis.com/tfhub-lite-models/google/lite-model/aiy/vision/classifier/birds_V1/3.tflite",
+    "type": "tflite"
+  },
+  "labels": {
+    "url": "https://www.gstatic.com/aihub/tfhub/labelmaps/aiy_birds_V1_labelmap.csv",
+    "type": "csv"
+  },
+  "input": {
+    "width": 224,
+    "height": 224,
+    "channels": 3,
+    "mean": [127.5, 127.5, 127.5],
+    "std": [127.5, 127.5, 127.5]
+  }
+}
+```
+
+## Alternative for North American Birds Only
+
+If you specifically need a classifier trained only on North American birds, consider using [npatta01/Bird-Classifier](https://github.com/npatta01/Bird-Classifier) which is trained on 400 North American bird species.
+
+## Credits
+
+- Model by Google AIY
+- Configuration for Scrypted integration
